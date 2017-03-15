@@ -3,11 +3,11 @@
   angular
        .module('app')
        .controller('MainController', [
-          'navService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast',
+          'navService', '$mdSidenav', '$mdBottomSheet', '$log', '$q', '$state', '$mdToast','api','__env',
           MainController
        ]);
 
-  function MainController(navService, $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast) {
+  function MainController(navService, $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast, api,__env) {
     var vm = this;
 
     vm.menuItems = [ ];
@@ -17,7 +17,12 @@
     vm.title = $state.current.data.title;
     vm.showSimpleToast = showSimpleToast;
     vm.toggleRightSidebar = toggleRightSidebar;
+    $log.debug("================== "+__env.apiUrl);
 
+
+    api.loadAllItems().then(function(pipelines){
+        vm.pipelines = pipelines;
+    });
     navService
       .loadAllItems()
       .then(function(menuItems) {

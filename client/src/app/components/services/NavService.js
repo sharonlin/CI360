@@ -13,17 +13,18 @@
         name: 'Dashboard',
         icon: 'dashboard',
         sref: '.dashboard'
-      },
-      {
-        name: 'Profile',
-        icon: 'person',
-        sref: '.profile'
-      },
-      {
-        name: 'Table',
-        icon: 'view_module',
-        sref: '.table'
       }
+      // ,
+      // {
+      //   name: 'Profile',
+      //   icon: 'person',
+      //   sref: '.profile'
+      // },
+      // {
+      //   name: 'Table',
+      //   icon: 'view_module',
+      //   sref: '.table'
+      // }
     ];
 
     return {
