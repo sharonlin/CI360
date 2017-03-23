@@ -1,2 +1,2 @@
-# octopus
+# CI360
 Nothing special
